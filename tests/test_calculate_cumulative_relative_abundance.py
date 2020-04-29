@@ -28,8 +28,8 @@ def test_calculate_cumulative_relative_abundance():
     df1_res = result[0]
     df2_res = result[1]
 
-    assert df1_res.columns.contains('Cum Rel Abund')
-    assert df2_res.columns.contains('Cum Rel Abund')
+    assert True in df1_res.columns.str.contains('Cum Rel Abund')
+    assert True in df2_res.columns.str.contains('Cum Rel Abund')
 
     assert df1_res.loc['219', 'Cum Rel Abund'] == 0.239709
     assert df1_res.loc['218', 'Cum Rel Abund'] == 0.430695
